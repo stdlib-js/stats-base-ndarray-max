@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2025 The Stdlib Authors.
@@ -16,16 +16,20 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
+
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@main/index.d.ts"/>
+
+import { ndarray } from '@stdlib/types/ndarray';
 
 /**
-* Compute the maximum value of a one-dimensional ndarray.
+* Computes the maximum value of a one-dimensional ndarray.
 *
-* @module @stdlib/stats-base-ndarray-max
+* @param arrays - array-like object containing an input ndarray
+* @returns maximum value
 *
 * @example
 * var ndarray = require( '@stdlib/ndarray-base-ctor' );
-* var max = require( '@stdlib/stats-base-ndarray-max' );
 *
 * var xbuf = [ 1.0, 3.0, 4.0, 2.0 ];
 * var x = new ndarray( 'generic', xbuf, [ 4 ], [ 1 ], 0, 'row-major' );
@@ -33,12 +37,9 @@
 * var v = max( [ x ] );
 * // returns 4.0
 */
-
-// MODULES //
-
-var main = require( './main.js' );
+declare function max<T extends ndarray = ndarray>( arrays: [ T ] ): number;
 
 
 // EXPORTS //
 
-module.exports = main;
+export = max;
